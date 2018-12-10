@@ -16,8 +16,7 @@ void setup() {
 void loop() {
   network.update() ;
 unsigned long vol=analogRead(A0);
-unsigned long temp = map(vol,0,1023,0,180);
-//unsigned long temp=vol*500/1023;
+unsigned long temp=vol*500/1023;
 RF24NetworkHeader header(node00) ;
 bool ok=network.write(header,&temp,sizeof(temp)) ; //send the data
 }
